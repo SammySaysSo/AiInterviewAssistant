@@ -1,6 +1,14 @@
 # AiInterviewAssistant
 AI-Powered interview assistant 100% powered by Azure. Node.js and Angular as the frameworks with Translator, Form Recognizer, OpenAI, and Real Time Speech as the SDKs. For job seekers &amp; recruiters.
 
+## How to run locally
+- Make sure have updated angular & node.js installed
+- To use any of the backend work locally --> have to generate your own api keys and endpoints using azure portal ai services
+- Download source file
+  - Open terminal in backend --> enter command "node server.js"
+  - Open terminal in frontend --> enter command "ng serve"
+- To use the real time speech translate --> uncomment the backend end function --> uncomment front end service functionality(service and component) --> delete the html class "disabled-button" & "disabled" on the two buttons
+
 ## Inspiration
 This project was inspired because I'm currently a college student, and to be honest, with all the drama in the job market for Computer Science and Engineers, this is a project that I'm deeply passionate about. I also wanted something to be free out on the internet but also with more features where users didn't have to pay to use online. You can search right now and probably find an extensive resume AI assistant that already exists, but it costs a lot of money (especially for college students) to might even use that. This project is to save time, money, and get real interview practice specified to whatever major you are in. 
 
