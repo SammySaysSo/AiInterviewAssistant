@@ -1,0 +1,65 @@
+<button id="buttonHelp" (click)="showHelpText()"> {{otherTextOnScreen1}} </button>
+<p id="textTopRight"> {{otherTextOnScreen2}} </p>
+
+<select [(ngModel)]="selectedLanguage" class="custom-dropdown">
+    <option class="custom-dropdown" *ngFor="let lang of languages" [value]="lang.code"> {{ lang.name }} </option>
+</select>
+<button id="buttonHelp" (click)="translate()"> {{otherTextOnScreen3}} </button>
+
+<body>
+    <div>
+        <h2>{{otherTextOnScreen4}}</h2>
+
+        <input type="file" #fileInput (change)="onFileSelected($event)">
+        <button (click)="fileInput.click()">{{otherTextOnScreen5}}</button>
+        <button (click)="analyzeResume()">{{otherTextOnScreen6}}</button>
+        <button (click)="clearResume($event)">{{otherTextOnScreen7}}</button>
+        <div *ngIf="resumeFileName.length > 0">
+            <h5>{{otherTextOnScreen8}}: {{ resumeFileName }}</h5>
+        </div>
+
+        <div *ngIf="!analysisResult && clickedResumeButton">
+            <pre>{{otherTextOnScreen9}}: {{ timeElapsed }} {{otherTextOnScreen10}}.</pre>
+            <pre>{{otherTextOnScreen11}}</pre>
+        </div>
+
+        <div *ngIf="analysisResult">
+            <h3>{{otherTextOnScreen12}}</h3>
+            <div class="text-container" [innerHTML]="formattedText()"></div>
+        </div>
+    </div>
+
+    <div>
+        <h2>{{otherTextOnScreen13}}</h2>
+        <button class="disabled-button" (click)="startTranscription()" disabled>{{otherTextOnScreen14}}</button>
+        <button class="disabled-button" (click)="stopTranscription()" disabled>{{otherTextOnScreen15}}</button>
+        <button (click)="clearTranscription()">{{otherTextOnScreen16}}</button>
+        <button (click)="getRelevantInterviewQuestions()">{{otherTextOnScreen17}}</button>
+        <button (click)="getScoreOfUsersResponse()">{{otherTextOnScreen18}}</button>
+        <button (click)="clearResponses()">{{otherTextOnScreen19}}</button>
+        <h4 *ngIf="totalQuestions.length > 0">
+            {{ totalQuestions[(totalQuestions.length-1)] }} 
+        </h4>
+        <div *ngIf="openAIScoreResponse.length > 0">
+            <pre> {{openAIScoreResponse}} </pre>
+        </div>
+        <p>{{otherTextOnScreen20}}: {{ currentMessages }}</p>
+        <p>{{otherTextOnScreen21}}:</p>
+        <textarea #transcriptBox [(ngModel)]="transcript" (input)="adjustTextareaHeight()"></textarea>
+    </div>
+</body>
+<div *ngIf="clickedHelpButton" id="buttonHelpText">
+    <pre>{{instructions1}}:</pre>
+    <pre>1. {{instructions2}}</pre>
+    <pre>2. {{instructions3}}
+    a. {{instructions4}} 
+    b. {{instructions5}}
+    c. {{instructions6}}</pre>
+    <pre>3. {{instructions7}}
+    a. {{instructions8}} 
+    b. {{instructions9}}
+    c. {{instructions10}}
+    d. {{instructions11}}
+    e. {{instructions12}}
+    f. {{instructions13}}</pre>
+</div>

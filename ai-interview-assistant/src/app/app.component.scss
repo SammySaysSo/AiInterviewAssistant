@@ -1,0 +1,222 @@
+$primary-color: #4CAF50;
+$secondary-color: #2196F3;
+$third-color: #c09821;
+$background-color: #f4f4f4;
+$button-hover: #3d8b40;
+$dropdown-bg: linear-gradient(135deg, #4CAF50, #2196F3);
+$dropdown-hover-bg: linear-gradient(135deg, #3d8b40, #1b7ccd);
+$card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: $background-color;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+div {
+    background: white;
+    padding: 20px;
+    min-width: 45%;
+    margin: 5px auto;
+    border-radius: 5px;
+    box-shadow: $card-shadow;
+    max-width: 650px;
+    text-align: center;
+    overflow: hidden;
+    word-wrap: break-word;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+h2 {
+    color: $primary-color;
+}
+
+input{
+    display: none;
+}
+
+button {
+    background: $primary-color;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    
+    &:hover {
+        background: $button-hover;
+    }
+}
+
+button:nth-of-type(2) {
+    background: $secondary-color;
+    
+    &:hover {
+        background: #1b7ccd;
+    }
+}
+
+button:nth-of-type(4), button:nth-of-type(5), button:nth-of-type(6)  {
+    background: $third-color;
+    
+    &:hover {
+        background: $button-hover;
+    }
+}
+
+pre {
+    background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+p {
+    font-size: 14px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.text-container {
+    background-color: #f9f9f9;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    white-space: pre-line;
+    border: 1px solid #ddd;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    strong {
+      font-weight: bold;
+      color: #2c3e50; // Darker color for emphasis
+    }
+}
+
+textarea {
+    width: 100%; // Makes it take the full width
+    min-height: 50px; // Set an initial height
+    resize: none; // Prevent manual resizing
+    overflow-y: hidden; // Hide scrollbars when not needed
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  
+    &:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+}
+
+#buttonHelp{
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 5px;
+    font-size: large;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    
+    &:hover {
+        background: $button-hover;
+    }
+}
+  
+#buttonHelpText{
+    all: unset;
+}
+ 
+#textTopRight {
+    position: absolute;
+    top: 0;        
+    right: 0;        
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.custom-dropdown {
+    appearance: none;
+    background: $dropdown-bg;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    position: relative;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+    &:hover {
+        border-color: #007bff;
+        background: $dropdown-hover-bg;
+        transform: scale(1.05);
+    }
+
+    &:focus {
+        box-shadow: 0 0 5px rgba(0, 91, 179, 0.5);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.disabled-button {
+    position: relative; 
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: not-allowed;
+
+    &::after {
+        content: "This button is disabled due to the import package \"microsoft-cognitiveservices-speech-sdk\" not having browser support. Works locally on ng serve but not for ng build. See my hackathon video for more information.";
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #f44336;
+        color: white;
+        padding: 5px;
+        font-size: 12px;
+        opacity: 0;
+        min-width: 200px;
+        pointer-events: none;
+        transition: opacity 0.3s;
+    }
+
+    &:hover {
+        opacity: 0.7; 
+    }
+
+    &:hover::after {
+        opacity: 1;
+    }
+}
+  
+
