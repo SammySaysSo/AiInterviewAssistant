@@ -49,7 +49,7 @@ export class AppComponent implements OnInit, OnDestroy {
     { code: 'tr', name: 'Turkish' },
     { code: 'vi', name: 'Vietnamese' }
   ];
-  instructions1: string = "Insructions";
+  instructions1: string = "Instructions";
   instructions2: string = "This is an AI Interview Assistant tool divided into two parts: Smart Resume Analyzer & AI-Powered Interview Assistant";
   instructions3: string = "Smart Resume Analyzer";
   instructions4: string = "The is able to take any resume in PDF format by using the Choose File button";
@@ -57,7 +57,7 @@ export class AppComponent implements OnInit, OnDestroy {
   instructions6: string = "You are able to clear the resume and the AI's response to submit again";
   instructions7: string = "AI-Powered Interview Assistant";
   instructions8: string = "The main idea of this section is to prepare you for relevant interview questions";
-  instructions9: string = "To get an interview question, select the Get Interview Question button. This is also designed so you don't get the same interview question if clicked again";
+  instructions9: string = "To get an interview question, select the Get Interview Question button. This is also designed so you don't get the same interview question if clicked again. Also, if a resume is inserted into this website, the assistant asks a question from your resume.";
   instructions10: string = "Therefore, to make this as realistic as possible, you will be able to speak into a microphone for real-time transmission in you answering the question like a real job interview. (Using the Start & stop Real time transmission buttons respectively)";
   instructions11: string = "If you don't want to speak into the microphone, you are also able to just type in your answer as well. This textbox is also used to make corrections for any mistakes the real-time transmission make as well";
   instructions12: string = "Once you are done answering the question, you are able to click the Score Your Response button to see how well you did. This will also give you feedback on how to improve your response";
