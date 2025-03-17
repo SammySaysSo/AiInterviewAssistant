@@ -29,7 +29,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private interval: any;
   timeElapsed: number = 0;
   clickedResumeButton: boolean = false;
-  clickedHelpButton: boolean = false;
+  clickedHelpButton: boolean = true;
   totalQuestions: string[] = [""];
   openAIScoreResponse: string = '';
   selectedLanguage = 'es';
